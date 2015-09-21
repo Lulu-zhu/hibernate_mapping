@@ -2,14 +2,12 @@
 <!DOCTYPE hibernate-mapping PUBLIC 
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<hibernate-mapping> 
-	<class name ="hibernate_session.User" >
-	<id name = "id">
-	<generator class="uuid"/>
+<hibernate-mapping package = "hibernate_session"> 
+	<class name ="User" table = "tUser">
+	<id name = "id" column = "user_id" length = "32">
+	<generator class="native"/>
 	</id>
-	<property name="name"/>
-	<property name="password"/>
-	<property name="createTime"/>
-	<property name="expireTime"/>
+	<property name="name" unique="true" length = "22"/>
+	<many-to-one name="group" column="groupid" cascade="all"/>
 	</class>
 </hibernate-mapping>

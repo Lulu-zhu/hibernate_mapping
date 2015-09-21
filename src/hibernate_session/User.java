@@ -1,24 +1,26 @@
 package hibernate_session;
 
-import java.util.Date;
-
 public class User {
 	
-	private String id;
+	private int id;
 	
 	private String name;
 	
-	private String password;
-	
-	private Date createTime;
-	
-	private Date expireTime;
+	private Group group;
 
-	public String getId() {
+	public Group getGroup() {
+		return group;
+	}
+
+	public void setGroup(Group group) {
+		this.group = group;
+	}
+
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -29,29 +31,6 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public Date getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-
-	public Date getExpireTime() {
-		return expireTime;
-	}
-
-	public void setExpireTime(Date expireTime) {
-		this.expireTime = expireTime;
-	}
+	
 	
 }
